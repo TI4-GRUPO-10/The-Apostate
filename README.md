@@ -51,7 +51,7 @@ Este é um projeto acadêmico desenvolvido para a disciplina **Trabalho Interdis
 👤 **[Gabriel Cunha Schlegel]** | 🔗 [LinkedIn](https://www.linkedin.com/in/gabriel-cunha-schlegel-0b417627b/)  
 
 ### 🔄 **Suporte Geral (Função Não Definida, Auxiliando Onde For Necessário)**  
-👤 **[SEU NOME]** | 🔗 [LinkedIn](LINKEDIN)  
+👤 **[Iago Fereguetti]** | 🔗 [LinkedIn](LINKEDIN)  
 👤 **[SEU NOME]** | 🔗 [LinkedIn](LINKEDIN)  
 
 ---
