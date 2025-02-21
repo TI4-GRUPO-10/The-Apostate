@@ -47,7 +47,7 @@ Este é um projeto acadêmico desenvolvido para a disciplina **Trabalho Interdis
 👤 **[SEU NOME]** | 🔗 [LinkedIn](LINKEDIN)  
 
 ### 🎮 **Organização, Design e Combate**  
-👤 **[SEU NOME]** | 🔗 [LinkedIn](LINKEDIN)  
+👤 **[Kaiky França da Silva]** | 🔗 [LinkedIn](https://www.linkedin.com/in/glkaiky/) | [Portifólio](www.kaikyfrs.com.br)  
 👤 **[SEU NOME]** | 🔗 [LinkedIn](LINKEDIN)  
 
 ### 🔄 **Suporte Geral (Função Não Definida, Auxiliando Onde For Necessário)**  
