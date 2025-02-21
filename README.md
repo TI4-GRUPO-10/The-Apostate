@@ -1,4 +1,3 @@
-Aqui está um **README.md** completo e bem estruturado para o seu projeto no GitHub. Ele inclui informações sobre o projeto, tecnologias usadas, instruções para contribuir e espaço para adicionar os integrantes do grupo com links do LinkedIn.  
 
 ---
 
