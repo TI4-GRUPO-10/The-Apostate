@@ -1,4 +1,5 @@
 
+
 ---
 
 ## 📜 **README.md** - Trabalho Interdisciplinar 4  
@@ -32,16 +33,28 @@ Este é um projeto acadêmico desenvolvido para a disciplina **Trabalho Interdis
  └── TrabalhoInterdisciplinar4.sln (solução Unity)
 ```
 
-### 👥 Equipe  
 
-👨‍💻 **Kaiky França da Silva** - [LinkedIn](www.linkedin.com/in/glkaiky) [Portifólio](kaikyfrs.com.br)  
-🎨 **Nome 2** - [LinkedIn](https://www.linkedin.com/in/nome2)  
-🎮 **Nome 3** - [LinkedIn](https://www.linkedin.com/in/nome3)  
-🔊 **Nome 4** - [LinkedIn](https://www.linkedin.com/in/nome4)  
-📜 **Nome 5** - [LinkedIn](https://www.linkedin.com/in/nome5)  
-🛠 **Nome 6** - [LinkedIn](https://www.linkedin.com/in/nome6)  
-🚀 **Nome 7** - [LinkedIn](https://www.linkedin.com/in/nome7)  
-🔍 **Nome 8** - [LinkedIn](https://www.linkedin.com/in/nome8)  
+---
+
+## 👥 Equipe e Responsabilidades  
+
+### 🎨 **Grafos, Arte e Level Design**  
+👤 **[SEU NOME]** | 🔗 [LinkedIn](LINKEDIN)  
+👤 **[SEU NOME]** | 🔗 [LinkedIn](LINKEDIN)  
+
+### 🤖 **AI e Level Design (Provavelmente Mecânicas Principais Também)**  
+👤 **[SEU NOME]** | 🔗 [LinkedIn](LINKEDIN)  
+👤 **[SEU NOME]** | 🔗 [LinkedIn](LINKEDIN)  
+
+### 🎮 **Organização, Design e Combate**  
+👤 **[SEU NOME]** | 🔗 [LinkedIn](LINKEDIN)  
+👤 **[SEU NOME]** | 🔗 [LinkedIn](LINKEDIN)  
+
+### 🔄 **Suporte Geral (Função Não Definida, Auxiliando Onde For Necessário)**  
+👤 **[SEU NOME]** | 🔗 [LinkedIn](LINKEDIN)  
+👤 **[SEU NOME]** | 🔗 [LinkedIn](LINKEDIN)  
+
+---
 
 
 ## 🛠 Como Contribuir  
