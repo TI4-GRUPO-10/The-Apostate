@@ -52,7 +52,7 @@ Este é um projeto acadêmico desenvolvido para a disciplina **Trabalho Interdis
 
 ### 🔄 **Suporte Geral (Função Não Definida, Auxiliando Onde For Necessário)**  
 👤 **[Iago Fereguetti]** | 🔗 [LinkedIn](LINKEDIN)  
-👤 **[SEU NOME]** | 🔗 [LinkedIn](LINKEDIN)  
+👤 **[Luan Carrieiros]** | 🔗 [LinkedIn]([LINKEDIN](https://www.linkedin.com/in/luan-carrieiros-b7508b237/))  
 
 ---
 
