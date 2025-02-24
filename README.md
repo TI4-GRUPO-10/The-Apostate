@@ -43,7 +43,7 @@ Este é um projeto acadêmico desenvolvido para a disciplina **Trabalho Interdis
 👤 **[Arthur Clemente Machado]** | 🔗 [LinkedIn](https://www.linkedin.com/in/arthur-clemente-846b7627b/)  
 
 ### 🤖 **AI e Level Design (Provavelmente Mecânicas Principais Também)**  
-👤 **[Lucas Henrique Rocha Hauck]** | 🔗 [LinkedIn](https://www.linkedin.com/in/lucas-henrique-rocha-hauck?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app) 
+👤 **[Lucas Henrique Rocha Hauck]** | 🔗 [LinkedIn](https://www.linkedin.com/in/lucas-henrique-rocha-hauck?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app) <br>
 👤 **[Diego Moreira Rocha]** | 🔗 [LinkedIn](https://www.linkedin.com/in/diego-moreira-36117727b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)  
 
 ### 🎮 **Organização, Design e Combate**  
