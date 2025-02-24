@@ -39,7 +39,7 @@ Este é um projeto acadêmico desenvolvido para a disciplina **Trabalho Interdis
 ## 👥 Equipe e Responsabilidades  
 
 ### 🎨 **Grafos, Arte e Level Design**  
-👤 **[Felipe VIlhena]**  | 🔗 [LinkedIn](https://www.linkedin.com/in/felipe-vilhena-dias-224b23271/) | [Portifólio](https://github.com/felipevidias)
+👤 **[Felipe VIlhena]**  | 🔗 [LinkedIn](https://www.linkedin.com/in/felipe-vilhena-dias-224b23271/) | [Portifólio](https://github.com/felipevidias)\\
 👤 **[Arthur Clemente]** | 🔗 [LinkedIn](LINKEDIN)  
 
 ### 🤖 **AI e Level Design (Provavelmente Mecânicas Principais Também)**  
