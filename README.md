@@ -40,7 +40,7 @@ Este é um projeto acadêmico desenvolvido para a disciplina **Trabalho Interdis
 
 ### 🎨 **Grafos, Arte e Level Design**  
 👤 **[Felipe Vilhena Dias]**  | 🔗 [LinkedIn](https://www.linkedin.com/in/felipe-vilhena-dias-224b23271/) | [Portifólio](https://github.com/felipevidias)<br>
-👤 **[Arthur Clemente Machado]** | 🔗 [LinkedIn](https://www.linkedin.com/in/arthur-clemente-846b7627b/)  
+👤 **[Arthur Clemente Machado]** | 🔗 [LinkedIn](https://www.linkedin.com/in/arthur-clemente-846b7627b/)  | [Portifólio](https://github.com/sorarthur)<br>
 
 ### 🤖 **AI e Level Design (Provavelmente Mecânicas Principais Também)**  
 👤 **[Lucas Henrique Rocha Hauck]** | 🔗 [LinkedIn](https://www.linkedin.com/in/lucas-henrique-rocha-hauck?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app) <br>
