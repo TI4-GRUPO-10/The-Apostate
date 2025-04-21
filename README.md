@@ -33,7 +33,6 @@ Este é um projeto acadêmico desenvolvido para a disciplina **Trabalho Interdis
  └── TrabalhoInterdisciplinar4.sln (solução Unity)
 ```
 
-
 ---
 
 ## 👥 Equipe e Responsabilidades  
