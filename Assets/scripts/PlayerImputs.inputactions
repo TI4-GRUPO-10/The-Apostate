@@ -50,7 +50,7 @@
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard",
+                    "groups": ";Controler",
                     "action": "Grab",
                     "isComposite": false,
                     "isPartOfComposite": false

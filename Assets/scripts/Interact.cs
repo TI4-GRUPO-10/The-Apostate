@@ -10,28 +10,27 @@ public class Interact : MonoBehaviour
     [ReadOnlyAtribute][SerializeField] Rigidbody2D rb;
     [ReadOnlyAtribute][SerializeField] Transform tf;
     [ReadOnlyAtribute][SerializeField] GameObject target;
+    [ReadOnlyAtribute][SerializeField] GrabableObject grabableObject;
     [ReadOnlyAtribute][SerializeField] bool grabing;
     [ReadOnlyAtribute][SerializeField] float magnitude;
     [ReadOnlyAtribute][SerializeField] float push;
     [ReadOnlyAtribute][SerializeField] Vector3 pushDir;
+    [ReadOnlyAtribute][SerializeField] Vector3 lookDir;
 
     [Header("Interaction options")]
     [SerializeField] Vector3 objectOffset;
     [SerializeField] float range = 10f;
     [SerializeField] float maxPush = 10f;
+    [SerializeField] bool OverridePlayerRotation = true;
 
 
     [Header("Config")]
     [SerializeField] bool drawRangeGizmo = true;
-    [SerializeField] Vector3 offset = new Vector3(0.4F, 0, 0);
+    [SerializeField] float raycastOffset = 0.5f;
     [SerializeField] LayerMask layermask;
     [SerializeField] InputActionReference grab;
+    [SerializeField] Camera mainCamera;
 
-
-
-    Vector3 rotOffset1;
-    Vector3 rotOffset2;
-    Vector3 rotOffset3;
 
     Vector3 objRotOffset;
 
@@ -46,16 +45,37 @@ public class Interact : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        lookDir = mainCamera.ScreenToWorldPoint(Input.mousePosition) - tf.position;
+        lookDir.z = 0;
+        lookDir.Normalize();
+
         if (grabing)
         {
-            objRotOffset = tf.rotation * objectOffset;
+            objRotOffset = tf.rotation * (objectOffset + grabableObject.grabOffset);
 
-            pushDir = tf.position + objRotOffset - target.GetComponentInParent<Transform>().position;
+            pushDir = tf.position + objRotOffset - grabableObject.parentTransform.position;
             magnitude = pushDir.magnitude;
             push = math.min(magnitude, maxPush);
+            grabableObject.parentTransform.GetComponent<Rigidbody2D>().linearVelocity = rb.linearVelocity;
 
-            target.GetComponentInParent<Rigidbody2D>().gameObject.GetComponent<Transform>().position += push * 0.99f * pushDir.normalized;
+            grabableObject.parentTransform.position += push * 0.99f * pushDir.normalized;
+            grabableObject.parentTransform.rotation = tf.rotation;
         }
+        else
+            raycast();
+
+        if (OverridePlayerRotation)
+        {
+            if (target != null)
+            {
+                GetComponent<movement>().lookAtMouse = true;
+            }
+            else
+            {
+                GetComponent<movement>().lookAtMouse = false;
+            }
+        }
+
     }
 
     void OnEnable()
@@ -71,12 +91,13 @@ public class Interact : MonoBehaviour
     private void GrabAttempt(InputAction.CallbackContext obj)
     {
         Debug.Log("Attemped grab");
-        if (target != null)
-            releaseTarget();
-        else
-            raycast();
 
-        if (target != null)
+        if (grabableObject != null)
+            releaseTarget();
+        else if (target != null)
+            grabableObject = target.GetComponent<GrabableObject>();
+
+        if (grabableObject != null)
         {
             grabTarget();
         }
@@ -84,8 +105,13 @@ public class Interact : MonoBehaviour
 
     void grabTarget()
     {
-        grabing = true;
-        target.GetComponentInChildren<BoxCollider2D>().enabled = false;
+        if (grabableObject != null)
+        {
+            grabing = true;
+            target.GetComponentInChildren<BoxCollider2D>().enabled = false;
+            if (OverridePlayerRotation)
+                GetComponent<movement>().lookAtMouse = true;
+        }
     }
 
     void releaseTarget()
@@ -93,20 +119,21 @@ public class Interact : MonoBehaviour
         target.GetComponentInChildren<BoxCollider2D>().enabled = true;
         grabing = false;
         target = null;
+        grabableObject = null;
+        if (OverridePlayerRotation)
+            GetComponent<movement>().lookAtMouse = false;
     }
 
     private void raycast()
     {
-        Debug.Log("Attemped Raycast");
-        //rotOffset1 = tf.rotation * new Vector3(offset.x, offset.y, offset.z);
-        rotOffset2 = tf.rotation * new Vector3(0, offset.y, offset.z);
-        //rotOffset3 = tf.rotation * new Vector3(-offset.x, offset.y, offset.z);
-
-        RaycastHit2D hit = Physics2D.Raycast(transform.position + rotOffset2, (tf.rotation * new Vector3(0F, 1F, 0F) * range), range, layermask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + (lookDir.normalized * raycastOffset), lookDir, range, layermask);
         if (hit.collider != null)
         {
             target = hit.collider.gameObject;
-            Debug.Log("Found object");
+        }
+        else
+        {
+            target = null;
         }
     }
 
@@ -114,12 +141,32 @@ public class Interact : MonoBehaviour
     {
         if (drawRangeGizmo)
         {
-            rotOffset2 = tf.rotation * new Vector3(0, offset.y, offset.z);
             Gizmos.color = Color.red;
 
-            //Gizmos.DrawLine(tf.position + rotOffset1, tf.position + rotOffset1 + (tf.rotation * new Vector3(0F, 1F, 0F) * range));
-            Gizmos.DrawLine(tf.position + rotOffset2, tf.position + rotOffset2 + (tf.rotation * new Vector3(0F, 1F, 0F) * range));
-            //Gizmos.DrawLine(tf.position + rotOffset3, tf.position + rotOffset3 + (tf.rotation * new Vector3(0F, 1F, 0F) * range));
+            if (!grabing)
+            {
+                Gizmos.DrawLine(tf.position + (lookDir * raycastOffset), tf.position + (lookDir * raycastOffset) + (lookDir * range));
+            }
+            else
+            {
+                Vector3 grabCube = new Vector3(0.1f, 0.1f, 0);
+                Vector3 grabCenter = tf.position + (tf.rotation * objectOffset);
+                Vector3 objectcube = new Vector3(0.02f, 0.02f, 0);
+                Vector3 objectPivot = tf.position + objRotOffset;
+
+                Gizmos.DrawLine(grabCenter + new Vector3(grabCube.x, grabCube.y, grabCube.z), grabCenter + new Vector3(-grabCube.x, grabCube.y, grabCube.z));
+                Gizmos.DrawLine(grabCenter + new Vector3(-grabCube.x, grabCube.y, grabCube.z), grabCenter + new Vector3(-grabCube.x, -grabCube.y, grabCube.z));
+                Gizmos.DrawLine(grabCenter + new Vector3(-grabCube.x, -grabCube.y, grabCube.z), grabCenter + new Vector3(grabCube.x, -grabCube.y, grabCube.z));
+                Gizmos.DrawLine(grabCenter + new Vector3(grabCube.x, -grabCube.y, grabCube.z), grabCenter + new Vector3(grabCube.x, grabCube.y, grabCube.z));
+
+                Gizmos.color = Color.green;
+                Gizmos.DrawLine(objectPivot + new Vector3(objectcube.x, objectcube.y, objectcube.z), objectPivot + new Vector3(-objectcube.x, objectcube.y, objectcube.z));
+                Gizmos.DrawLine(objectPivot + new Vector3(-objectcube.x, objectcube.y, objectcube.z), objectPivot + new Vector3(-objectcube.x, -objectcube.y, objectcube.z));
+                Gizmos.DrawLine(objectPivot + new Vector3(-objectcube.x, -objectcube.y, objectcube.z), objectPivot + new Vector3(objectcube.x, -objectcube.y, objectcube.z));
+                Gizmos.DrawLine(objectPivot + new Vector3(objectcube.x, -objectcube.y, objectcube.z), objectPivot + new Vector3(objectcube.x, objectcube.y, objectcube.z));
+                //Gizmos.DrawCube(tf.position + objRotOffset, new Vector3(1, 1, 0));
+            }
         }
+
     }
 }

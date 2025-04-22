@@ -12,10 +12,10 @@ TagManager:
   - Water
   - UI
   - Raycast
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Interactable Object
+  - PlayerAtack
+  - EnemyAtack
   - 
   - 
   - 

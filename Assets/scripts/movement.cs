@@ -15,7 +15,7 @@ public class movement : MonoBehaviour
     [SerializeField] float stopedDragCoefficient;
 
     [Header("Rotation")]
-    [SerializeField] bool lookAtMouse = true;
+    [SerializeField] public bool lookAtMouse = true;
     [SerializeField] float rotationAccel = 90F;
     [SerializeField] float lookFOV = 45F;
     [SerializeField] float lookDebugRange = 10F;
