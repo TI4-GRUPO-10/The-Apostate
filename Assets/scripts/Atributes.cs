@@ -6,6 +6,7 @@ public class Atributes : MonoBehaviour
     [SerializeField] float health;
     [SerializeField] float maxHealth;
 
+    [SerializeField] bool destroyOnDeath = true;
 
     public float getHealth()
     {
@@ -17,6 +18,11 @@ public class Atributes : MonoBehaviour
         return maxHealth;
     }
 
+    /// <summary>
+    /// Positive values = heal ;
+    /// Negative values = hurt ;
+    /// </summary>
+    /// <param name="val"></param>
     public void genericHeathEffect(float val)
     {
         if (val > 0)
@@ -32,20 +38,41 @@ public class Atributes : MonoBehaviour
     public void Die()
     {
         Debug.Log(gameObject.name + " death attempt");
+        if (destroyOnDeath)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            setHealth(0, true);
+        }
     }
 
-    void heal(float val)
+    /// <summary>
+    /// Only positive values
+    /// </summary>
+    /// <param name="val"></param>
+    public void heal(float val)
     {
         Debug.Log(gameObject.name + " heal attempt");
         health = math.min(health + val, maxHealth);
     }
-    void heal(float val, bool overheal)
+    /// <summary>
+    /// Only positive values
+    /// </summary>
+    /// <param name="val"></param>
+    /// <param name="overheal"></param>
+    public void heal(float val, bool overheal)
     {
         Debug.Log(gameObject.name + " (over)heal attempt");
         health += val;
     }
 
-    void hurt(float val)
+    /// <summary>
+    /// Only positive values
+    /// </summary>
+    /// <param name="val"></param>
+    public void hurt(float val)
     {
         Debug.Log(gameObject.name + " hurt attempt");
         health -= val;

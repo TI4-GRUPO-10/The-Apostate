@@ -22,6 +22,7 @@ public class Interact : MonoBehaviour
     [SerializeField] float range = 10f;
     [SerializeField] float maxPush = 10f;
     [SerializeField] bool OverridePlayerRotation = true;
+    [SerializeField] float shootForce = 1f;
 
 
     [Header("Config")]
@@ -29,6 +30,7 @@ public class Interact : MonoBehaviour
     [SerializeField] float raycastOffset = 0.5f;
     [SerializeField] LayerMask layermask;
     [SerializeField] InputActionReference grab;
+    [SerializeField] InputActionReference shoot;
     [SerializeField] Camera mainCamera;
 
 
@@ -81,12 +83,29 @@ public class Interact : MonoBehaviour
     void OnEnable()
     {
         grab.action.started += GrabAttempt;
+        shoot.action.performed += shootAttempt;
     }
 
     void OnDisable()
     {
         grab.action.started -= GrabAttempt;
+        shoot.action.performed -= shootAttempt;
     }
+
+    void shootAttempt(InputAction.CallbackContext obj)
+    {
+        Debug.Log("Attemped shoot");
+
+        if (grabableObject != null)
+        {
+            GameObject proj = grabableObject.gameObject;
+
+            releaseTarget();
+
+            proj.GetComponent<GrabableObject>().shoot(lookDir, shootForce, false);
+        }
+    }
+
 
     private void GrabAttempt(InputAction.CallbackContext obj)
     {
