@@ -56,5 +56,18 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "TI4-GRUPO-10.sln"
+    "dotnet.defaultSolution": "TI4-GRUPO-10.sln",
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": true,
+        "scminput": false,
+        "css": false,
+        "javascript": true,
+        "html": false,
+        "java": true,
+        "json": false,
+        "mcfunction": false,
+        "csharp": true
+    }
 }
