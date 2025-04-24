@@ -22,7 +22,10 @@ public class Interact : MonoBehaviour
     [SerializeField] float range = 10f;
     [SerializeField] float maxPush = 10f;
     [SerializeField] bool OverridePlayerRotation = true;
-    [SerializeField] float shootForce = 1f;
+
+    [Header("Trow Animation")]
+    [SerializeField] float trowMaxChargeSecounds = 1.5f;
+
 
 
     [Header("Config")]
