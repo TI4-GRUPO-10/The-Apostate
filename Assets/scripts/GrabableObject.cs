@@ -19,8 +19,11 @@ public class GrabableObject : MonoBehaviour
         if (projectileControler != null)
         {
             projectileControler.enableProjectile(enemy);
+            projectileControler.timerStart();
             Rigidbody2D rb = GetComponentInParent<Rigidbody2D>();
-            rb.AddForce(direction * magnitude, ForceMode2D.Impulse);
+
+            rb.AddTorque(Random.Range(-20f, 20f), ForceMode2D.Impulse);
+            rb.AddForce(direction * projectileControler.forceMagnitude, ForceMode2D.Impulse);
         }
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -34,9 +37,4 @@ public class GrabableObject : MonoBehaviour
             projectileControler = GetComponent<Transform>().parent.GetComponentInChildren<projectileControler>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
