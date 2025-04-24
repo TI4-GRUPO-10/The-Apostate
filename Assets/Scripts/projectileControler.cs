@@ -7,6 +7,7 @@ public class projectileControler : MonoBehaviour
     [ReadOnlyAtribute][SerializeField] Collider2D physicsColision;
     [ReadOnlyAtribute][SerializeField] Collider2D rayTracableColider;
     [SerializeField] float damage;
+    [SerializeField] public float forceMagnitude = 10f;
 
     [Header(" Non projectiles properties ")]
     [SerializeField] float _nppLinearDamp = 2f;
@@ -17,6 +18,10 @@ public class projectileControler : MonoBehaviour
     [SerializeField] float linearDamp = 0.1f;
     [SerializeField] float angularDamp = 20f;
     [SerializeField] float mass = 50f;
+
+    [Header(" air time properties ")]
+    [SerializeField] public float airTime = 0.5f;
+    [ReadOnlyAtribute][SerializeField] float airTimeCounter = 0f;
 
     void Start()
     {
@@ -70,5 +75,39 @@ public class projectileControler : MonoBehaviour
         damageColision.enabled = true;
         physicsColision.enabled = false;
         rayTracableColider.enabled = false;
+    }
+
+    public void timerStart()
+    {
+        airTimeCounter = airTime;
+    }
+
+    public void timerStop()
+    {
+        airTimeCounter = 0;
+    }
+
+    public void timerReset()
+    {
+        airTimeCounter = airTime;
+    }
+
+    void timerTick()
+    {
+        if (airTimeCounter > 0)
+        {
+            airTimeCounter -= Time.deltaTime;
+            if (airTimeCounter <= 0)
+            {
+                airTimeCounter = 0;
+                disableProjectile();
+            }
+        }
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        timerTick();
+
     }
 }
