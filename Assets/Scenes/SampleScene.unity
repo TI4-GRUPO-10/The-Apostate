@@ -1177,12 +1177,15 @@ MonoBehaviour:
   physicsColision: {fileID: 0}
   rayTracableColider: {fileID: 0}
   damage: 10
-  _nppLinearDamp: 2
+  forceMagnitude: 50
+  _nppLinearDamp: 10
   _nppAngularDamp: 10
   _nppMass: 10
   linearDamp: 0.1
-  angularDamp: 20
+  angularDamp: 0.1
   mass: 50
+  airTime: 0.2
+  airTimeCounter: 0
 --- !u!61 &1262028514
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2024,7 +2027,7 @@ MonoBehaviour:
   range: 2
   maxPush: 1
   OverridePlayerRotation: 1
-  shootForce: 10
+  trowMaxChargeSecounds: 1.5
   drawRangeGizmo: 1
   raycastOffset: 0.5
   layermask:

@@ -88,9 +88,9 @@ public class movement : MonoBehaviour
 
         rb.AddForce(wishDir * accel);
 
-        if (rb.velocity.magnitude > topSpeed)
+        if (rb.linearVelocity.magnitude > topSpeed)
         {
-            rb.velocity = rb.velocity.normalized * topSpeed; // Limit the speed to the top speed
+            rb.linearVelocity = rb.linearVelocity.normalized * topSpeed; // Limit the speed to the top speed
         }
     }
 

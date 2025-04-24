@@ -105,7 +105,7 @@ public class Interact : MonoBehaviour
 
             releaseTarget();
 
-            proj.GetComponent<GrabableObject>().shoot(lookDir, shootForce, false);
+            proj.GetComponent<GrabableObject>().shoot(lookDir, false);
         }
     }
 

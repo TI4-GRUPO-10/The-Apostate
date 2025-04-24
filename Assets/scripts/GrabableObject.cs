@@ -13,9 +13,9 @@ public class GrabableObject : MonoBehaviour
 
     }
 
-    public void shoot(Vector2 direction, float magnitude, bool enemy)
+    public void shoot(Vector2 direction, bool enemy)
     {
-        Debug.Log("attempted shooting \"" + gameObject.name + "\" in direction (" + direction + ") with magnitude (" + magnitude + ") as: " + (enemy ? "enemy" : "player"));
+        Debug.Log("attempted shooting \"" + gameObject.name + "\" in direction (" + direction + ") as: " + (enemy ? "enemy" : "player"));
         if (projectileControler != null)
         {
             projectileControler.enableProjectile(enemy);
