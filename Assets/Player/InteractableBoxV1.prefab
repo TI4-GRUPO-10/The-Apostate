@@ -60,7 +60,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 8755a78b663b0fc4b9f801a5ea7d3958, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -180,6 +180,7 @@ MonoBehaviour:
   health: 50
   maxHealth: 50
   destroyOnDeath: 1
+  animator: {fileID: 0}
 --- !u!1 &3614120909334232873
 GameObject:
   m_ObjectHideFlags: 0
