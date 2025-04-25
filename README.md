@@ -46,7 +46,7 @@ Este é um projeto acadêmico desenvolvido para a disciplina **Trabalho Interdis
 👤 **[Diego Moreira Rocha]** | 🔗 [LinkedIn](https://www.linkedin.com/in/diego-moreira-36117727b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)  
 
 ### 🎮 **Organização, Design e Combate**  
-👤 **[Kaiky França da Silva]** | 🔗 [LinkedIn](https://www.linkedin.com/in/glkaiky/) | [Portifólio](www.kaikyfrs.com.br)  
+👤 **[Kaiky França da Silva]** | 🔗 [LinkedIn](https://www.linkedin.com/in/glkaiky/) | [Portifólio](https://kaikyfrs.com.br/)  
 👤 **[Gabriel Cunha Schlegel]** | 🔗 [LinkedIn](https://www.linkedin.com/in/gabriel-cunha-schlegel-0b417627b/)  
 
 ### 🔄 **Suporte Geral (Função Não Definida, Auxiliando Onde For Necessário)**  
