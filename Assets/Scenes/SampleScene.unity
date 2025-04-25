@@ -1181,15 +1181,10 @@ MonoBehaviour:
   _nppAngularDamp: 10
   _nppMass: 10
   linearDamp: 0.1
-<<<<<<< Updated upstream
-  angularDamp: 20
-  mass: 50
-=======
   angularDamp: 0.1
   mass: 2
   airTime: 0.2
   airTimeCounter: 0
->>>>>>> Stashed changes
 --- !u!61 &1262028514
 BoxCollider2D:
   m_ObjectHideFlags: 0
