@@ -69,5 +69,6 @@
         "json": false,
         "mcfunction": false,
         "csharp": true
-    }
+    },
+    "dotnet.preferCSharpExtension": true
 }
