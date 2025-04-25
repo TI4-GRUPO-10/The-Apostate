@@ -24,6 +24,8 @@ public class Interact : MonoBehaviour
     [SerializeField] float maxPush = 10f;
     [SerializeField] bool OverridePlayerRotation = true;
     [SerializeField] float releaseImpulse = 2f;
+    [SerializeField] LayerMask layermask;
+    [SerializeField] LayerMask confirmLayermask;
 
     [Header("Trow Animation")]
     [SerializeField] float trowMaxChargeSecounds = 1.5f;
@@ -35,7 +37,6 @@ public class Interact : MonoBehaviour
     [SerializeField] LayerMask wallMask;
     [SerializeField] bool drawRangeGizmo = true;
     [SerializeField] float raycastOffset = 0.5f;
-    [SerializeField] LayerMask layermask;
     [SerializeField] InputActionReference grab;
     [SerializeField] InputActionReference shoot;
     [SerializeField] Camera mainCamera;

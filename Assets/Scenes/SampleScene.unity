@@ -613,7 +613,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.5, y: 1.5}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &1157658966
 GameObject:
@@ -1845,10 +1845,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   tf: {fileID: 0}
   mainCamera: {fileID: 519420031}
-  acceleration: 20
+  acceleration: 2
   topSpeed: 10
-  dragCoefficient: 5
-  stopedDragCoefficient: 9
+  dragCoefficient: 0.5
+  stopedDragCoefficient: 0.9
   lookAtMouse: 1
   rotationAccel: 10
   lookFOV: 30
@@ -1924,7 +1924,7 @@ Transform:
   m_GameObject: {fileID: 1674609644}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.09, y: 0.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1941,10 +1941,10 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 10
+  m_UseAutoMass: 1
+  m_Mass: 0.64000005
   m_LinearDamping: 0
-  m_AngularDamping: 0.9
+  m_AngularDamping: 0.1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -2029,6 +2029,12 @@ MonoBehaviour:
   maxPush: 1
   OverridePlayerRotation: 1
   releaseImpulse: 1
+  layermask:
+    serializedVersion: 2
+    m_Bits: 64
+  confirmLayermask:
+    serializedVersion: 2
+    m_Bits: 0
   trowMaxChargeSecounds: 1.5
   trowHelperLayer:
     serializedVersion: 2
@@ -2038,9 +2044,6 @@ MonoBehaviour:
     m_Bits: 0
   drawRangeGizmo: 1
   raycastOffset: 0.5
-  layermask:
-    serializedVersion: 2
-    m_Bits: 64
   grab: {fileID: -1305248155791176255, guid: 6380fca3fc3d2b44cabf63da3bdfb9f1, type: 3}
   shoot: {fileID: 4887193811243293552, guid: 6380fca3fc3d2b44cabf63da3bdfb9f1, type: 3}
   mainCamera: {fileID: 519420031}
@@ -2089,8 +2092,8 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   destroyOnDeath: 0
---- !u!231 &1674609653
-SpringJoint2D:
+--- !u!254 &1674609653
+RelativeJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2102,14 +2105,13 @@ SpringJoint2D:
   m_ConnectedRigidBody: {fileID: 0}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_BreakAction: 0
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 0
-  m_Distance: 0.005
-  m_DampingRatio: 0
-  m_Frequency: 5
+  m_BreakAction: 3
+  m_MaxForce: 10000
+  m_MaxTorque: 10000
+  m_CorrectionScale: 0.3
+  m_AutoConfigureOffset: 0
+  m_LinearOffset: {x: 0, y: 0}
+  m_AngularOffset: 0
 --- !u!1 &1820569826
 GameObject:
   m_ObjectHideFlags: 0
