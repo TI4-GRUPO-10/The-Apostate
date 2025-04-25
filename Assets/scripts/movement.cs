@@ -87,6 +87,11 @@ public class movement : MonoBehaviour
         */
 
         rb.AddForce(wishDir * accel);
+
+        if (rb.linearVelocity.magnitude > topSpeed)
+        {
+            rb.linearVelocity = rb.linearVelocity.normalized * topSpeed; // Limit the speed to the top speed
+        }
     }
 
     // Drag Calculations
