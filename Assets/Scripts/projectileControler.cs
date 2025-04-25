@@ -33,13 +33,20 @@ public class projectileControler : MonoBehaviour
     // Update is called once per frame
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision with " + collision.gameObject.name + " detected");
+        atackGameObject(collision.gameObject);
 
-        collision.transform.GetComponent<Atributes>().genericHeathEffect(-damage);
-        damageColision.enabled = false;
-        disableProjectile();
+        //GetComponentInParent<Rigidbody2D>().linearVelocity *= -0.5f;
+    }
 
-        GetComponentInParent<Rigidbody2D>().linearVelocity *= -0.5f;
+    void atackGameObject(GameObject target)
+    {
+        Atributes atributes = target.GetComponent<Atributes>();
+        if (atributes != null)
+        {
+            atributes.genericHeathEffect(-damage);
+            damageColision.enabled = false;
+            disableProjectile();
+        }
     }
 
     public void disableProjectile()
@@ -55,7 +62,7 @@ public class projectileControler : MonoBehaviour
         rayTracableColider.enabled = true;
     }
 
-    public void enableProjectile(bool enemy)
+    public bool enableProjectile(bool enemy)
     {
         Rigidbody2D rb = GetComponentInParent<Rigidbody2D>();
 
@@ -75,6 +82,8 @@ public class projectileControler : MonoBehaviour
         damageColision.enabled = true;
         physicsColision.enabled = false;
         rayTracableColider.enabled = false;
+
+        return !damageColision.IsTouchingLayers(LayerMask.GetMask("wall"));
     }
 
     public void timerStart()
