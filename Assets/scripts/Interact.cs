@@ -135,8 +135,6 @@ public class Interact : MonoBehaviour
             if (OverridePlayerRotation)
                 GetComponent<movement>().lookAtMouse = true;
 
-
-
             GetComponent<RelativeJoint2D>().linearOffset = objectOffset + grabableObject.grabOffset;
             //GetComponent<RelativeJoint2D>(). = 0.005f;
             // Connect to object
