@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad(gameObject); // Opcional, se quiser que sobreviva a trocas de cena
             audioSource = gameObject.AddComponent<AudioSource>();
             audioSource.playOnAwake = false;
+            
         }
         else
         {
@@ -20,11 +22,13 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlaySound(AudioClip clip)
+    public void PlaySound(AudioClip clip, AudioMixerGroup mixerGroup = null)
     {
         if (clip != null)
         {
             audioSource.PlayOneShot(clip);
+            
+            audioSource.outputAudioMixerGroup = mixerGroup; // <<< configurar o mixer aqui
         }
     }
 }
