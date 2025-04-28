@@ -1,8 +1,12 @@
 using UnityEngine;
 <<<<<<< HEAD
+<<<<<<< HEAD
 using UnityEngine.Audio;
 =======
 >>>>>>> c1b9b96 (Soud Track Music)
+=======
+using UnityEngine.Audio;
+>>>>>>> cdbb466 (LoadScreen)
 
 public class AudioManager : MonoBehaviour
 {
@@ -18,9 +22,13 @@ public class AudioManager : MonoBehaviour
             audioSource = gameObject.AddComponent<AudioSource>();
             audioSource.playOnAwake = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
             
 =======
 >>>>>>> c1b9b96 (Soud Track Music)
+=======
+            
+>>>>>>> cdbb466 (LoadScreen)
         }
         else
         {
@@ -29,19 +37,28 @@ public class AudioManager : MonoBehaviour
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public void PlaySound(AudioClip clip, AudioMixerGroup mixerGroup = null)
 =======
     public void PlaySound(AudioClip clip)
 >>>>>>> c1b9b96 (Soud Track Music)
+=======
+    public void PlaySound(AudioClip clip, AudioMixerGroup mixerGroup = null)
+>>>>>>> cdbb466 (LoadScreen)
     {
         if (clip != null)
         {
             audioSource.PlayOneShot(clip);
 <<<<<<< HEAD
+<<<<<<< HEAD
             
             audioSource.outputAudioMixerGroup = mixerGroup; // <<< configurar o mixer aqui
 =======
 >>>>>>> c1b9b96 (Soud Track Music)
+=======
+            
+            audioSource.outputAudioMixerGroup = mixerGroup; // <<< configurar o mixer aqui
+>>>>>>> cdbb466 (LoadScreen)
         }
     }
 }
