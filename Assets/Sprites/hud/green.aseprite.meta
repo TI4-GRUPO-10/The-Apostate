@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3f044c9d0a9d23e498cae2260d57dab2
+guid: cd718b2872102fb58964c6e883776748
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -131,10 +131,10 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 3
-      y: 2
-      width: 49
-      height: 106
+      x: 17
+      y: 70
+      width: 34
+      height: 10
     spriteID: 0a98a889d357fec47be75a4c47c4bd0d
     spriteBone: []
     spriteOutline: []
@@ -153,7 +153,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: hud_spriteBar
+    - name: green
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
