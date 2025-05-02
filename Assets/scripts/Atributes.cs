@@ -3,12 +3,18 @@ using UnityEngine;
 
 public class Atributes : MonoBehaviour
 {
+    [ReadOnlyAtribute][SerializeField] Animator animator;
+
+    [SerializeField] Transform shakeTransform;
+
+    [SerializeField] float shakeDuration = 0.4f;
+    [SerializeField] float shakeAmount = 0.05f;
+    [ReadOnlyAtribute][SerializeField] float shakeTime = 0f;
+
     [SerializeField] float health;
     [SerializeField] float maxHealth;
-
     [SerializeField] bool destroyOnDeath = true;
 
-    [ReadOnlyAtribute][SerializeField] Animator animator;
 
     public float getHealth()
     {
@@ -85,6 +91,12 @@ public class Atributes : MonoBehaviour
         }
 
         animator.SetTrigger("Dmg");
+        shake();
+    }
+
+    void shake()
+    {
+        shakeTime = shakeDuration;
     }
 
     void setHealth(float val)
@@ -120,6 +132,22 @@ public class Atributes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (shakeTime > 0)
+        {
+            shakeTime -= Time.deltaTime;
+            if (shakeTime <= 0)
+            {
+                shakeTransform.localPosition = new Vector3(0, 0, 0);
+            }
+            else
+            {
+                shakeTransform.localPosition = new Vector3(
+                    0 + UnityEngine.Random.Range(-shakeAmount, shakeAmount),
+                    0 + UnityEngine.Random.Range(-shakeAmount, shakeAmount),
+                    0
+                );
+            }
+        }
 
     }
 }
