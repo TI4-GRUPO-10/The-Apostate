@@ -8,8 +8,10 @@ using UnityEngine.InputSystem;
 
 public class Interact : MonoBehaviour
 {
-    [ReadOnlyAtribute][SerializeField] Rigidbody2D rb;
-    [ReadOnlyAtribute][SerializeField] Transform tf;
+    [SerializeField] Rigidbody2D rb;
+    [SerializeField] movement playerMovement;
+    [SerializeField] RelativeJoint2D relativeJoint;
+    [SerializeField] Transform tf;
     [ReadOnlyAtribute][SerializeField] GameObject target;
     [ReadOnlyAtribute][SerializeField] GrabableObject grabableObject;
     [ReadOnlyAtribute][SerializeField] bool grabing;
@@ -39,6 +41,7 @@ public class Interact : MonoBehaviour
     [SerializeField] float raycastOffset = 0.5f;
     [SerializeField] InputActionReference grab;
     [SerializeField] InputActionReference shoot;
+    [SerializeField] InputActionReference damageMyself;
     [SerializeField] Camera mainCamera;
 
 
@@ -49,8 +52,18 @@ public class Interact : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        tf = GetComponent<Transform>();
+        if (mainCamera == null)
+        {
+            mainCamera = Camera.main;
+        }
+        if (rb == null)
+        {
+            rb = GetComponent<Rigidbody2D>();
+        }
+        if (tf == null)
+        {
+            tf = GetComponent<Transform>();
+        }
     }
 
     // Update is called once per frame
@@ -71,11 +84,11 @@ public class Interact : MonoBehaviour
         {
             if (target != null)
             {
-                GetComponent<movement>().lookAtMouse = true;
+                playerMovement.lookAtMouse = true;
             }
             else
             {
-                GetComponent<movement>().lookAtMouse = false;
+                playerMovement.lookAtMouse = false;
             }
         }
 
@@ -85,12 +98,14 @@ public class Interact : MonoBehaviour
     {
         grab.action.started += GrabAttempt;
         shoot.action.performed += shootAttempt;
+        damageMyself.action.performed += (ctx) => { GetComponentInParent<Atributes>().hurt(1); };
     }
 
     void OnDisable()
     {
         grab.action.started -= GrabAttempt;
         shoot.action.performed -= shootAttempt;
+        damageMyself.action.performed -= (ctx) => { GetComponentInParent<Atributes>().hurt(1); };
     }
 
 
@@ -133,13 +148,13 @@ public class Interact : MonoBehaviour
             grabing = true;
             target.GetComponentInChildren<BoxCollider2D>().enabled = false;
             if (OverridePlayerRotation)
-                GetComponent<movement>().lookAtMouse = true;
+                playerMovement.lookAtMouse = true;
 
-            GetComponent<RelativeJoint2D>().linearOffset = objectOffset + grabableObject.grabOffset;
-            //GetComponent<RelativeJoint2D>(). = 0.005f;
+            relativeJoint.linearOffset = objectOffset + grabableObject.grabOffset;
+            //relativeJoint. = 0.005f;
             // Connect to object
-            GetComponent<RelativeJoint2D>().connectedBody = target.GetComponentInParent<Rigidbody2D>();
-            GetComponent<RelativeJoint2D>().enabled = true;
+            relativeJoint.connectedBody = target.GetComponentInParent<Rigidbody2D>();
+            relativeJoint.enabled = true;
             objectMass = target.GetComponentInParent<Rigidbody2D>().mass;
             target.GetComponentInParent<Rigidbody2D>().mass = 0.1f;
 
@@ -149,8 +164,8 @@ public class Interact : MonoBehaviour
     void releaseTarget()
     {
         // Disconect from object
-        GetComponent<RelativeJoint2D>().connectedBody = null;
-        GetComponent<RelativeJoint2D>().enabled = false;
+        relativeJoint.connectedBody = null;
+        relativeJoint.enabled = false;
         target.GetComponentInParent<Rigidbody2D>().mass = objectMass;
 
         target.GetComponentInChildren<BoxCollider2D>().enabled = true;
@@ -159,7 +174,7 @@ public class Interact : MonoBehaviour
         GameObject proj = grabableObject.gameObject;
         grabableObject = null;
         if (OverridePlayerRotation)
-            GetComponent<movement>().lookAtMouse = false;
+            playerMovement.lookAtMouse = false;
 
         proj.transform.parent.GetComponent<Rigidbody2D>().AddForce(lookDir.normalized * releaseImpulse * proj.transform.parent.GetComponent<Rigidbody2D>().mass, ForceMode2D.Impulse);
     }
