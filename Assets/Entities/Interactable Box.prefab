@@ -114,6 +114,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9052132202227967550}
   - component: {fileID: 7133577351914407987}
+  - component: {fileID: 8743422103310855085}
   m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
@@ -191,6 +192,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8743422103310855085
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977603510227394949}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f0453023a7e030f44a450b14258f1787, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4465041401730514638
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,7 +321,6 @@ GameObject:
   - component: {fileID: 7223850534744717090}
   - component: {fileID: 1450548124649860641}
   - component: {fileID: 7301845237590615649}
-  - component: {fileID: 1749525945351506332}
   m_Layer: 8
   m_Name: Interactable Box
   m_TagString: Untagged
@@ -409,33 +431,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bd0448f48f7e4b41b9a80663ad7c7dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  shakeTransform: {fileID: 9052132202227967550}
-  shakeAmount: 0.1
-  shakeDuration: 0.1
-  shakeTime: 0
   health: 50
   maxHealth: 50
   destroyOnDeath: 1
---- !u!95 &1749525945351506332
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6973565973799344138}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f0453023a7e030f44a450b14258f1787, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  hurtAnimators:
+  - {fileID: 8743422103310855085}
