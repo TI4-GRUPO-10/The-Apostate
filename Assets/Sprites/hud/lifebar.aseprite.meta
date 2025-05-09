@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3f044c9d0a9d23e498cae2260d57dab2
+guid: cfc768c40025670458ac34ee2228903d
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,19 +123,19 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: hud_spriteBar
+  - name: lifebar
     originalName: 
-    pivot: {x: 1.5434783, y: -0.5217391}
+    pivot: {x: 1.5106384, y: -0.34615383}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 3
-      y: 2
-      width: 49
-      height: 106
-    spriteID: 0a98a889d357fec47be75a4c47c4bd0d
+      x: 4
+      y: 4
+      width: 47
+      height: 104
+    spriteID: 1ae918bd032deda4c8e8fb4e698f2bee
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,21 +147,21 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 300551910
-    name: hud_spriteBar
+    guid: -112906841
+    name: lifebar
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: hud_spriteBar
+    - name: lifebar
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 1
-        y: 48
-        width: 46
-        height: 92
-      spriteId: 0a98a889d357fec47be75a4c47c4bd0d
+        y: 36
+        width: 47
+        height: 104
+      spriteId: 1ae918bd032deda4c8e8fb4e698f2bee
     linkedCells: []
     parentIndex: -1
   platformSettings:

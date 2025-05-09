@@ -12,6 +12,7 @@ public class Interact : MonoBehaviour
     [SerializeField] movement playerMovement;
     [SerializeField] RelativeJoint2D relativeJoint;
     [SerializeField] Transform tf;
+    [SerializeField] Animator animator;
     [ReadOnlyAtribute][SerializeField] GameObject target;
     [ReadOnlyAtribute][SerializeField] GrabableObject grabableObject;
     [ReadOnlyAtribute][SerializeField] bool grabing;
@@ -158,6 +159,9 @@ public class Interact : MonoBehaviour
             objectMass = target.GetComponentInParent<Rigidbody2D>().mass;
             target.GetComponentInParent<Rigidbody2D>().mass = 0.1f;
 
+            // animation
+            animator.SetBool("grabing", true);
+
         }
     }
 
@@ -175,6 +179,9 @@ public class Interact : MonoBehaviour
         grabableObject = null;
         if (OverridePlayerRotation)
             playerMovement.lookAtMouse = false;
+
+        // animation
+        animator.SetBool("grabing", false);
 
         proj.transform.parent.GetComponent<Rigidbody2D>().AddForce(lookDir.normalized * releaseImpulse * proj.transform.parent.GetComponent<Rigidbody2D>().mass, ForceMode2D.Impulse);
     }
