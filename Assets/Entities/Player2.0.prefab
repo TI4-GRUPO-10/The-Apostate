@@ -222,6 +222,7 @@ MonoBehaviour:
   playerMovement: {fileID: 3160433913324602503}
   relativeJoint: {fileID: 3520243324488137607}
   tf: {fileID: 4106941658554783679}
+  animator: {fileID: 3020630441686668226}
   target: {fileID: 0}
   grabableObject: {fileID: 0}
   grabing: 0
@@ -248,7 +249,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   drawRangeGizmo: 1
-  raycastOffset: 0.5
+  raycastOffset: 0.4
   grab: {fileID: 1781555164194001046, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   shoot: {fileID: 3823013739508518101, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   damageMyself: {fileID: -67021364347874065, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
@@ -303,7 +304,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.64000005
+  m_Mass: 0.25
   m_LinearDamping: 0
   m_AngularDamping: 10
   m_GravityScale: 0
@@ -362,7 +363,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.8, y: 0.8}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!114 &3160433913324602503
 MonoBehaviour:
@@ -545,7 +546,7 @@ Transform:
   m_GameObject: {fileID: 7630392961641502016}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.025, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

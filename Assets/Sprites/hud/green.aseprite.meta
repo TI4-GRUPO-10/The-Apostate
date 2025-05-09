@@ -125,16 +125,16 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: hud_spriteBar
     originalName: 
-    pivot: {x: 1.5434783, y: -0.5217391}
+    pivot: {x: 1.5106384, y: -0.34615383}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 17
-      y: 70
-      width: 34
-      height: 10
+      x: 4
+      y: 4
+      width: 47
+      height: 104
     spriteID: 0a98a889d357fec47be75a4c47c4bd0d
     spriteBone: []
     spriteOutline: []
@@ -158,9 +158,9 @@ ScriptedImporter:
       additiveSortOrder: 0
       cellRect:
         x: 1
-        y: 48
-        width: 46
-        height: 92
+        y: 36
+        width: 47
+        height: 104
       spriteId: 0a98a889d357fec47be75a4c47c4bd0d
     linkedCells: []
     parentIndex: -1
